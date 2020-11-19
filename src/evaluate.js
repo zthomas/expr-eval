@@ -71,7 +71,7 @@ export default async function evaluate(tokens, expr, values) {
       }
     } else if (type === IFUNDEF) {
       // Create closure to keep references to arguments and expression
-      nstack.push(await (async function () {
+      nstack.push((function () {
         var n2 = nstack.pop();
         var args = [];
         var argCount = item.value;
